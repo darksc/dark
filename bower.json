@@ -1,0 +1,22 @@
+{
+    "name": "dark",
+    "description": "",
+    "main": "",
+    "authors": [
+        "dark"
+    ],
+    "license": "MIT",
+    "moduleType": [],
+    "homepage": "",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "vue": "~1.0.13"
+    }
+}
