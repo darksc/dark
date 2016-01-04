@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/stylesheets/normalize.css"/>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <header class="col-xs-12 col-sm-12 col-md-12 header">
+            <h1><a href="/"><%= title %></a></h1>
+            <p>Welcome to <%= title %></p>
+        </header>
+    </div>
+
+    <div class="row" id="send">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+            <div class="form-group">
+                <div class="input-group">
+                    <input v-model="newPost" type="text" class="form-control" placeholder="输入你要发送的消息!">
+                    <div class="input-group-addon btn btn-default" @click="send()">发送</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row" id="post">
+        <article class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
+            <ul class="list-group">
+                <li v-for="p in post" transition="expand" class="list-group-item">
+                    <h4>{{p.author}}</h4>
+                    <small>{{p.data}}</small>
+                    <p>{{p.post}}</p>
+                </li>
+            </ul>
+        </article>
+    </div>
+</div>
+
+<script src="javascripts/moment.js"></script>
+<script src="javascripts/vue.min.js"></script>
+<script src="javascripts/vue-router.min.js"></script>
+<script src="javascripts/index.js"></script>
+</body>
+</html>

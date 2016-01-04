@@ -1,8 +1,17 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.header {
+    text-align: center;
 }
 
-a {
-  color: #00B7FF;
+/* 必需 */
+.expand-transition {
+    transition: max-height 1s ease, padding .2s ease;
+    max-height: 500px;
+}
+
+/* .expand-enter 定义进入的开始状态 */
+/* .expand-leave 定义离开的结束状态 */
+.expand-enter, .expand-leave {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 15px;
 }

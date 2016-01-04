@@ -6,4 +6,8 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'darK'});
 });
 
+router.get('/nav', function (req, res, next) {
+    res.render('index', {title: 'darK'});
+});
+
 module.exports = router;
