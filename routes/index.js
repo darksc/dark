@@ -9,22 +9,12 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/post', function (req, res, next) {
-    PostModel.find(function (err, post) {
-        console.log(post);
-        res.send(post);
-    });
-    //res.send([
-    //    {
-    //        author: 'darKS',
-    //        data: '123',
-    //        post: this.newPost
-    //    },
-    //    {
-    //        author: 'darKS',
-    //        data: '123',
-    //        post: this.newPost
-    //    }
-    //]);
+    PostModel.find()
+        .sort({_id: 'desc'})
+        .exec(function (err, post) {
+            console.log(post);
+            res.send(post);
+        });
 });
 
 router.post('/send', function (req, res, next) {
