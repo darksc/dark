@@ -22,18 +22,24 @@ gulp.task('bowerScript', function() {
 });
 
 gulp.task('bowerCss', function() {
-    // 找到
-    gulp.src('bower_components/*/dist/css/*.min.css')
-        // 重新设置目录结构
-        .pipe(rename({dirname: ''}))
-        // 另存
-        .pipe(gulp.dest('public/stylesheets'));
-
     gulp.src('bower_components/*/*.css')
         // 重新设置目录结构
         .pipe(rename({dirname: ''}))
         // 另存
         .pipe(gulp.dest('public/stylesheets'));
+
+    // 找到
+    gulp.src('bower_components/bootstrap/dist/css/*.min.css')
+        // 重新设置目录结构
+        .pipe(rename({dirname: ''}))
+        // 另存
+        .pipe(gulp.dest('public/stylesheets/bootstrap'));
+
+    gulp.src('bower_components/bootstrap/fonts/*')
+        // 重新设置目录结构
+        .pipe(rename({dirname: ''}))
+        // 另存
+        .pipe(gulp.dest('public/stylesheets/fonts/'));
 });
 
 gulp.task('script', function() {

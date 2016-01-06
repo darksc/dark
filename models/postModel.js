@@ -4,7 +4,8 @@ var db = require('./db');
 var PostSchema = new mongoose.Schema({
     author: String,
     data: String,
-    post: String
+    post: String,
+    only: String
 });
 
 var PostModel = db.model('post', PostSchema, 'post');

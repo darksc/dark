@@ -3,14 +3,10 @@
 <head>
     <title><%= title %></title>
     <meta charset="utf-8">
-
-    <link rel="stylesheet" href="/stylesheets/normalize.css"/>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css"/>
-    <link rel='stylesheet' href='/stylesheets/style.css'/>
-
+    <% include css.html %>
 </head>
 <body>
-<div class="container-fluid">
+<div class="container-fluid" id="index">
     <div class="row">
         <header class="col-xs-12 col-sm-12 col-md-12 header">
             <h1><a href="/"><%= title %></a></h1>
@@ -18,11 +14,11 @@
         </header>
     </div>
 
-    <div class="row" id="send">
+    <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
             <div class="form-group">
                 <div class="input-group">
-                    <input v-model="newPost" type="text" class="form-control" placeholder="输入你要发送的消息!">
+                    <input v-model="newPost" @keyup.enter="send" type="text" class="form-control" placeholder="输入你要发送的消息!">
                     <div class="input-group-addon btn btn-default" @click="send()">发送</div>
                 </div>
             </div>
@@ -30,13 +26,16 @@
     </div>
 
 
-    <div class="row" id="post">
+    <div class="row">
         <article class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3">
             <div class="list-group">
-                <a v-if="post.length > 0" v-for="p in post" transition="expand" class="list-group-item">
+                <a v-cloak v-for="p in post" transition="expand" class="list-group-item clearfix">
                     <h4>{{p.author}}</h4>
                     <small>{{p.data}}</small>
                     <p>{{p.post}}</p>
+                    <div class="post-menu">
+                        <span class="glyphicon glyphicon-trash" @click="remove(p)"></span>
+                    </div>
                 </a>
                 <p v-if="post.length <= 0" class="list-group-item text-center">暂无内容</p>
             </div>
@@ -44,10 +43,7 @@
     </div>
 </div>
 
-<script src="javascripts/moment.js"></script>
-<script src="javascripts/vue.min.js"></script>
-<script src="javascripts/vue-router.min.js"></script>
-<script src="javascripts/vue-resource.min.js"></script>
+<% include js.html %>
 <script src="javascripts/index.js"></script>
 </body>
 </html>

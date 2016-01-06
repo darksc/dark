@@ -1,3 +1,9 @@
+html, body {
+    height: 100%;
+}
+[v-cloak] {
+    display: none;
+}
 .header {
     text-align: center;
 }
@@ -14,4 +20,32 @@
     max-height: 0;
     opacity: 0;
     padding: 0 15px;
+}
+
+.is-Transformed {
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    top: 50%; left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+/* index */
+.glyphicon {
+    cursor: pointer;
+}
+.post-menu {
+    text-align: right;
+}
+
+
+/* login */
+.login .input-group {
+    margin-top: 30px;
+}
+.login .login-info {
+    height: 30px;
+    line-height: 30px;
 }

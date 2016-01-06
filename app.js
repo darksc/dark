@@ -9,8 +9,8 @@ var express = require('express'),
 
 // module
 var routes = require('./routes/index');
+var login = require('./routes/login');
 var users = require('./routes/users');
-var test = require('./routes/test');
 
 var app = express();
 
@@ -20,7 +20,7 @@ app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -29,8 +29,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // routes
 app.use('/', routes);
+app.use('/login', login);
 app.use('/users', users);
-app.use('/test', test);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
