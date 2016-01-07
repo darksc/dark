@@ -1,4 +1,7 @@
 'use strict';
+var user = {
+    usrname: 'dark'
+};
 
 var login = new Vue({
     el: '#login',
@@ -17,7 +20,7 @@ var login = new Vue({
             // get 'expires' header
             response.headers('expires');
 
-            this.$set('user', posts)
+            //this.$set('user', user)
 
         }, function (response) {
 

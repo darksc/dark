@@ -14,6 +14,12 @@ gulp.task('bowerScript', function() {
         // 另存
         .pipe(gulp.dest('public/javascripts'));
 
+    gulp.src('bower_components/*/dist/js/*.min.js')
+        // 重新设置目录结构
+        .pipe(rename({dirname: ''}))
+        // 另存
+        .pipe(gulp.dest('public/javascripts'));
+
     gulp.src('bower_components/moment/moment.js')
         // 重新设置目录结构
         .pipe(rename({dirname: ''}))

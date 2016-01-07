@@ -25,7 +25,7 @@ var index = new Vue({
                 author: 'darK',
                 data: moment().format('YYYY-MM-DD'),
                 post: self.newPost,
-                only: 'dark' + new Date().getTime()
+                only: 'dark_' + new Date().getTime()
             };
 
             self.$http.post('/send', function (data, status, request) {

@@ -4,9 +4,6 @@ html, body {
 [v-cloak] {
     display: none;
 }
-.header {
-    text-align: center;
-}
 
 /* 必需 */
 .expand-transition {
@@ -33,6 +30,10 @@ html, body {
 }
 
 /* index */
+#index {
+    background: #f3f3f4;
+    padding-top: 70px;
+}
 .glyphicon {
     cursor: pointer;
 }
@@ -42,6 +43,9 @@ html, body {
 
 
 /* login */
+#login {
+    background: #f3f3f4;
+}
 .login .input-group {
     margin-top: 30px;
 }
