@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <link rel="stylesheet" href="stylesheets/resume.css">
+</head>
+<body>
+<div class="layout">
+    <!-- 左边 -->
+    <div class="left clearfix">
+        <!-- 名称 -->
+        <div class="name">
+            <img alt="苏晨" src="images/Avatar.png"><span>苏晨</span>
+        </div>
+
+        <!-- 联系方式 -->
+        <div class="contact">
+            <ul>
+                <li><label>电话</label><span>13001181237</span></li>
+                <li><label>邮箱</label><span><a target="_blank" href="mailto:suchendark@outlook.com">suchendark@outlook.com</a></span></li>
+                <li><label>网站</label><span><a target="_blank" href="http://darksc.xyz/" >darksc.xyz</a></span></li>
+                <li><label>地址</label><span>北京 海淀<br>香山南路 红旗村</span></li>
+            </ul>
+        </div>
+
+        <!-- 自我介绍 -->
+        <div class="info">
+            <p>
+                <strong>你好</strong> 我是一名前端开发者, 平时没事学着大牛, 造一些轮子. 业余时间, 看看电影, 搞搞前沿技术, 玩玩滑板.
+            </p>
+        </div>
+
+        <!-- 社交 -->
+        <div class="links">
+            <ul>
+                <li><label>Github</label><a target="_blank" href="https://github.com/darksc/">darksc</a></li>
+                <li><label>Weibo</label><span><a target="_blank" href="http://weibo.com/kraitdark/">@Luqi丶苏晨</a></span></li>
+                <li><label>Wechat</label><span>darksc</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 右边 -->
+    <div class="right clearfix">
+
+        <!-- 工作经验 -->
+        <div class="experience">
+            <p class="title">工作经验</p>
+            <table>
+                <tr class="e-title">
+                    <td>北京恒达时讯科技开发股份有限公司</td>
+                    <td>前端开发工程师</td>
+                </tr>
+                <tr class="e-content">
+                    <td>2013年 - 至今</td>
+                    <td>负责公司内部管理系统的二次开发，独立基于XMPP+PHP+MySQL开发了新版内部通信系统，除了完成了新版的界面和架构外，还优化了原有底层算法和完善了缺失的文档，供在一千万丧尸的公司内部正常使用。</td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- 名称 -->
+        <div class="ohter clearfix">
+            <table>
+                <tr>
+                    <td class="o-left">
+                        <div class="schools">
+                            <p class="title">学校</p>
+                            <p class="e-title">内蒙古电子信息职业技术学院</p>
+                            <p class="e-content">2009年 9月 - 2012年 7月 </p>
+                        </div>
+
+                        <div class="hobbies">
+                            <p class="title">爱好</p>
+                            <p class="e-content">看书, 看电影, 逛网站, 逛github, 读书, 打篮球, 玩滑板, 旅游 </p>
+                        </div>
+                    </td>
+                    <td class="o-right">
+                        <div class="skills">
+                            <p class="title">技能</p>
+                            <p class="e-content">javascript</p>
+                            <div class="wrap"><div class="plan javascript"></div></div>
+
+                            <p class="e-content">css</p>
+                            <div class="wrap"><div class="plan css"></div></div>
+
+                            <p class="e-content">html</p>
+                            <div class="wrap"><div class="plan html"></div></div>
+
+                            <p class="e-content">node</p>
+                            <div class="wrap"><div class="plan node"></div></div>
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+        var right = document.querySelector('.right').offsetHeight,
+            left = document.querySelector('.left').offsetHeight,
+            layout;
+        if(left > right) {
+            layout = left;
+            document.querySelector('.right').style.height = left - 140 + 'px';
+        } else {
+            layout = right;
+        }
+        document.querySelector('.layout').style.height = layout + 'px';
+</script>
+</body>
+</html>

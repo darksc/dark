@@ -38,4 +38,8 @@ router.post('/remove', function (req, res, next) {
     });
 });
 
+router.get('/resume', function (req, res, next) {
+    res.render('resume', {title: 'dark'});
+});
+
 module.exports = router;

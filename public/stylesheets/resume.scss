@@ -1,0 +1,211 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Grande", "Microsoft JhengHei", "Microsoft YaHei", sans-serif;
+}
+
+:focus {
+    outline: none;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    color: #da4939;
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: "\200B";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.layout {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 1px solid #c8c8c8;
+    box-shadow: 2px 2px 10px 3px #c8c8c8;
+    .left, .right {
+        position: absolute;
+        padding: 70px;
+        float: left;
+    }
+    .left {
+        width: 320px;
+
+        .name, .contact, .info, .links {
+            font-size: 12px;
+        }
+        .name {
+            height: 70px;
+            line-height: 70px;
+            img {
+                height: 70px;
+                width: 70px;
+                margin-right: 40px;
+                vertical-align: middle;
+                border-radius: 35px;
+            }
+            span {
+                vertical-align: middle;
+                font-size: 70px;
+            }
+        }
+        .contact, .info, .links {
+            margin-top: 100px;
+        }
+        .contact, .links {
+            ul {
+                li {
+                    margin-bottom: 15px;
+                    line-height: 20px;
+                    label {
+                        font-weight: bold;
+                        display: inline-block;
+                        width: 110px;
+                        vertical-align: top;
+                    }
+                    span {
+                        display: inline-block;
+                        color: #A5ADB0;
+                    }
+                }
+            }
+        }
+
+        .info {
+            color: #A5ADB0;
+            line-height: 20px;
+            strong {
+                color: #000;
+            }
+        }
+
+    }
+    .right {
+        left: 460px;
+        right: 0;
+        background: #3B3C40;
+        .title {
+            color: #589B9D;
+            font-size: 16px;
+            margin: 0 0 20px 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        .e-title, .e-content {
+            font-size: 12px;
+        }
+        .e-title {
+            color: #FFFFFF;
+            font-weight: bold;
+
+        }
+        .e-content {
+            color: #A5ADB0;
+        }
+
+        .experience {
+            table {
+                font-size: 12px;
+                line-height: 20px;
+                display: block;
+                tbody {
+                    display: block;
+                }
+                tr {
+                    display: block;
+                    margin-bottom: 15px;
+                    &.e-title {
+                        margin-top: 50px;
+                    }
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                    td:first-child {
+                        width: 210px;
+                    }
+                    td {
+                        padding: 0;
+                        vertical-align: top;
+                    }
+                }
+            }
+        }
+
+        .ohter {
+            margin-top: 80px;
+            table {
+                width: 100%;
+                .o-left, .o-right {
+                }
+                .o-left {
+                    width: 270px;
+                    padding-right: 50px;
+                    .schools {
+                        margin-bottom: 70px;
+                    }
+                }
+                .o-right {
+                    vertical-align: top;
+                }
+                .wrap {
+                    width: 100%;
+                    background: #2A2B2D;
+                    height: 10px;
+                    overflow: hidden;
+                }
+                .plan {
+                    height: 10px;
+                    animation-name: go;
+                    animation-duration: 1s;
+                    animation-fill-mode: both;
+                    animation-timing-function: ease-in;
+                }
+                .javascript {
+                    width: 80%;
+                    background: #9E6391;
+                    height: 10px;
+                    animation-delay: .05s;
+                }
+
+                .css {
+                    animation-delay: .1s;
+                }
+
+                .html {
+                    animation-delay: .15s;
+                }
+
+                .css, .html {
+                    width: 90%;
+                    background: #9BDAAF;
+                }
+
+                .node {
+                    width: 50%;
+                    background: #7AAB13;
+                    animation-delay: .2s;
+                }
+            }
+        }
+    }
+}
+
+@keyframes go {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

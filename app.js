@@ -6,9 +6,9 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     bodyParser = require('body-parser');
 
-
 // module
-var routes = require('./routes/index');
+var
+routes = require('./routes/index');
 var login = require('./routes/login');
 var users = require('./routes/users');
 
