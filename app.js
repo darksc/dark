@@ -4,13 +4,15 @@ var express = require('express'),
     favicon = require('serve-favicon'),
     logger = require('morgan'),
     cookieParser = require('cookie-parser'),
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    session = require('express-session');
 
 // module
-var
-routes = require('./routes/index');
-var login = require('./routes/login');
+var index = require('./routes/index');
 var users = require('./routes/users');
+var login = require('./routes/login');
+var register = require('./routes/register');
+
 
 var app = express();
 
@@ -27,10 +29,22 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+
+    var url = req.originalUrl;
+    console.log(req.session);
+    //if (url != "/login" && !req.session.user) {
+    //    return res.redirect("/login");
+    //}
+    next();
+});
+
 // routes
-app.use('/', routes);
-app.use('/login', login);
+app.use('/', index);
 app.use('/users', users);
+app.use('/login', login);
+app.use('/register', register);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

@@ -1,30 +1,23 @@
 'use strict';
-var user = {
-    usrname: 'dark'
-};
+var user = {};
 
 var login = new Vue({
     el: '#login',
     data: {
         user: user
     },
-    ready: function() {
-        this.$http.get('/post').then(function (response) {
-
-            // get status
-            response.status;
-
-            // get all headers
-            response.headers();
-
-            // get 'expires' header
-            response.headers('expires');
-
-            //this.$set('user', user)
-
-        }, function (response) {
-
-            // handle error
-        });
+    methods: {
+        singin: function(event) {
+            var self = this;
+            self.$http.get('/login/signin', function (data, status, request) {
+                if(data) {
+                    window.location = '/';
+                } else {
+                    alert('登陆失败');
+                }
+            }, {
+                params: self.user
+            });
+        }
     }
 });

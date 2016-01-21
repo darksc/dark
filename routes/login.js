@@ -3,25 +3,27 @@
 var express = require('express');
 var router = express.Router();
 
-//var PostModel = require('../models/postModel');
+var UserModel = require('../models/userModel');
 
-/* GET home page. */
+/* GET login page. */
 router.get('/', function (req, res, next) {
-    res.render('login', {title: 'darK'});
+    res.render('login', {title: 'darK - 登陆'});
 });
 
-//router.get('/post', function (req, res, next) {
-//    PostModel.find()
-//        .sort({_id: 'desc'})
-//        .exec(function (err, post) {
-//            res.send(post);
-//        });
-//});
-//
-//router.post('/send', function (req, res, next) {
-//    var postEntity = new PostModel(req.query);
-//    postEntity.save();
-//    res.send(true);
-//});
+router.get('/signin', function (req, res, next) {
+    var user = req.query;
+    console.log(user);
+    UserModel.find({username: user.username}, function(err, docs) {
+        if(docs) {
+            if(docs[0].password == user.password) {
+                res.send('true');
+            } else {
+                res.send(false);
+            }
+        } else {
+            res.send(false);
+        }
+    });
+});
 
 module.exports = router;

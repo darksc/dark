@@ -2,18 +2,21 @@
 var user = {};
 
 var login = new Vue({
-    el: '#login',
+    el: '#register',
     data: {
         user: user
     },
+    ready: function() {
+
+    },
     methods: {
-        singin: function(event) {
+        signup: function(event) {
             var self = this;
-            self.$http.get('/login/signin', function (data, status, request) {
+            self.$http.post('/register/signup', function (data, status, request) {
                 if(data) {
-                    window.location = '/';
+                    alert('注册成功');
                 } else {
-                    alert('登陆失败');
+                    alert('注册失败');
                 }
             }, {
                 params: self.user

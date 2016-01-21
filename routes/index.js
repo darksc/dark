@@ -21,7 +21,7 @@ router.get('/post', function (req, res, next) {
 router.post('/send', function (req, res, next) {
     var postEntity = new PostModel(req.query);
     postEntity.save(function (err, product, numberAffected) {
-        if (err) {
+        if (!err) {
 
         }
     });
