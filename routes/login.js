@@ -7,7 +7,7 @@ var UserModel = require('../models/userModel');
 
 /* GET login page. */
 router.get('/', function (req, res, next) {
-    res.render('login', {title: 'darK - 登陆'});
+    res.render('login', {title: '矿岛 - 登陆'});
 });
 
 router.get('/signin', function (req, res, next) {

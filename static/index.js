@@ -4,6 +4,7 @@ var index = new Vue({
     el: '#index',
     data: {
         post: [],
+        username: '',
         newPost: ''
     },
     // 初始化
@@ -21,11 +22,13 @@ var index = new Vue({
                 return;
             }
 
+            var username = document.querySelector('#username').innerText;
+
             var myPost = {
-                author: 'darK',
+                author: username,
                 data: moment().format('YYYY-MM-DD'),
                 post: self.newPost,
-                only: 'dark_' + new Date().getTime()
+                only: username + '_' + new Date().getTime()
             };
 
             self.$http.post('/send', function (data, status, request) {

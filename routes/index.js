@@ -9,9 +9,9 @@ var PostModel = require('../models/postModel');
 router.get('/', function (req, res, next) {
     var user = req.session.user;
     if(typeof(user) != 'undefined') {
-        res.render('index', {title: user.username + ' - 社区', user: user});
+        res.render('index', {title: user.username + ' - 矿岛', user: user});
     } else {
-        res.render('index', {title: '社区'});
+        res.render('index', {title: '矿岛'});
     }
 
 });

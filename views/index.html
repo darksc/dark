@@ -34,7 +34,7 @@
                 <% } %>
                 <% if (typeof(user) != 'undefined') { %>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/user"><%= user.username %></a></li>
+                    <li><a id="username" href="/user"><%= user.username %></a></li>
                     <li><a href="/login/logout">注销</a></li>
                 </ul>
                 <% } %>
