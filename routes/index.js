@@ -35,7 +35,6 @@ router.post('/send', function (req, res, next) {
                 res.send(false);
             }
         });
-        res.send(true);
     } else {
         res.send(false);
     }
