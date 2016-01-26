@@ -25,23 +25,38 @@ router.get('/post', function (req, res, next) {
 });
 
 router.post('/send', function (req, res, next) {
-    var postEntity = new PostModel(req.query);
-    postEntity.save(function (err, product, numberAffected) {
-        if (!err) {
+    var user = req.session.user;
+    if(typeof(user) != 'undefined') {
+        var postEntity = new PostModel(req.query);
+        postEntity.save(function (err, product, numberAffected) {
+            if (!err) {
+                res.send(true);
+            } else {
+                res.send(false);
+            }
+        });
+        res.send(true);
+    } else {
+        res.send(false);
+    }
 
-        }
-    });
-    res.send(true);
+
 });
 
 router.post('/remove', function (req, res, next) {
-    PostModel.remove({only: req.query.only},function (err, product, numberAffected) {
-        if (!err) {
-            res.send(true);
-        } else {
-            res.send(false);
-        }
-    });
+    var user = req.session.user;
+    if(typeof(user) != 'undefined') {
+        PostModel.remove({only: req.query.only},function (err, product, numberAffected) {
+            if (!err) {
+                res.send(true);
+            } else {
+                res.send(false);
+            }
+        });
+    } else {
+        res.send(false);
+    }
+
 });
 
 router.get('/resume', function (req, res, next) {
