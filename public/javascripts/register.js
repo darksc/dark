@@ -15,6 +15,7 @@ var login = new Vue({
             self.$http.post('/register/signup', function (data, status, request) {
                 if(data) {
                     alert('注册成功');
+                    window.location = '/';
                 } else {
                     alert('注册失败');
                 }
