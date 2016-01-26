@@ -11,11 +11,11 @@ router.get('/', function (req, res, next) {
 });
 
 router.get('/signin', function (req, res, next) {
-    var user = req.query;
-    console.log(user);
-    UserModel.find({username: user.username}, function(err, docs) {
-        if(docs) {
-            if(docs[0].password == user.password) {
+    var loginUser = req.query;
+    UserModel.findOne({username: loginUser.username}, function(err, user) {
+        if(user) {
+            if(user.password == loginUser.password) {
+                req.session.user = user;
                 res.send('true');
             } else {
                 res.send(false);
@@ -24,6 +24,12 @@ router.get('/signin', function (req, res, next) {
             res.send(false);
         }
     });
+});
+
+router.get('/logout', function (req, res, next) {
+    req.session.user = undefined;
+    req.session.error = undefined;
+    res.redirect('/');
 });
 
 module.exports = router;

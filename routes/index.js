@@ -7,7 +7,13 @@ var PostModel = require('../models/postModel');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'darK'});
+    var user = req.session.user;
+    if(typeof(user) != 'undefined') {
+        res.render('index', {title: user.username + ' - 社区', user: user});
+    } else {
+        res.render('index', {title: '社区'});
+    }
+
 });
 
 router.get('/post', function (req, res, next) {
