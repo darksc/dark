@@ -16,7 +16,7 @@ router.get('/signin', function (req, res, next) {
         if(user) {
             if(user.password == loginUser.password) {
                 req.session.user = user;
-                res.send('true');
+                res.send(true);
             } else {
                 res.send(false);
             }

@@ -7,7 +7,7 @@ var UserModel = require('../models/userModel');
 
 /* GET register page. */
 router.get('/', function (req, res, next) {
-    res.render('register', {title: 'darK - 注册'});
+    res.render('register', {title: '矿岛 - 注册'});
 });
 
 router.post('/signup', function (req, res, next) {
